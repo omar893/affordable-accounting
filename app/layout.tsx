@@ -1,18 +1,29 @@
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Next.js on GitHub Pages',
-  description: 'Deploy your static Next.js site to GitHub Pages.',
+  title: 'Affordable Accounting Solutions',
+  description: 'Professional accounting services',
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${inter.className} bg-white text-gray-800`}>
+        {children}
+        <footer className="bg-gray-800 text-white py-6 text-center">
+          <div className="max-w-6xl mx-auto px-4">
+            <p>© {new Date().getFullYear()} Affordable Accounting Solutions</p>
+          </div>
+        </footer>
+      </body>
     </html>
   );
 }
