@@ -129,14 +129,64 @@
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             transition: transform 0.3s;
+            height: 300px;
+            perspective: 1000px;
+            cursor: pointer;
         }
         
         .card:hover {
             transform: translateY(-5px);
         }
         
-        .card-content {
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        
+        .card.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card-front {
+            background-color: white;
+            color: #1a4f8b;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .card-back {
+            background-color: white;
+            color: #333;
+            transform: rotateY(180deg);
             padding: 1.5rem;
+            overflow-y: auto;
+        }
+        
+        .card-image {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1.5rem;
+            background-color: #1a4f8b;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2rem;
         }
         
         .card h3 {
@@ -256,6 +306,10 @@
             .company-info {
                 text-align: center;
             }
+            
+            .card {
+                height: 280px;
+            }
         }
     </style>
 </head>
@@ -289,27 +343,55 @@
             <h2 class="section-title">Our Services</h2>
             <div class="cards">
                 <div class="card">
-                    <div class="card-content">
-                        <h3>Tax Preparation</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in ipsum hendrerit, egestas quam a. </p>
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-image">📊</div>
+                            <h3>Tax Preparation</h3>
+                            <p>Click to learn more</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>Tax Preparation</h3>
+                            <p>Expert tax preparation services to ensure compliance and maximize your returns. We stay updated with the latest tax laws to provide you with the best advice.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-content">
-                        <h3>Bookkeeping</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus est quam, sit amet fringilla.</p>
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-image">📝</div>
+                            <h3>Bookkeeping</h3>
+                            <p>Click to learn more</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>Bookkeeping</h3>
+                            <p>Accurate and timely bookkeeping services to keep your financial records organized. We help you track income and expenses for better financial management.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-content">
-                        <h3>GST Registered</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur venenatis congue semper. Aenean semper sapien.</p>
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-image">🏢</div>
+                            <h3>GST Registered</h3>
+                            <p>Click to learn more</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>GST Registered</h3>
+                            <p>Comprehensive GST registration and filing services. We handle all the paperwork and ensure timely submissions to keep your business compliant.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-content">
-                        <h3>Rentals</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mauris massa, cursus in erat a.</p>
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-image">🏠</div>
+                            <h3>Rentals</h3>
+                            <p>Click to learn more</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>Rentals</h3>
+                            <p>Specialized accounting services for rental properties. We handle income tracking, expense management, and tax deductions specific to rental investments.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -355,6 +437,13 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
+            });
+        });
+        
+        // Card flip functionality
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.classList.toggle('flipped');
             });
         });
     </script>
