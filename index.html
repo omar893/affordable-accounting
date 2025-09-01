@@ -71,7 +71,6 @@
         
         /* Hero section */
         .hero {
-            background-color: #1a4f8b;
             background-image: linear-gradient(rgba(55, 60, 65, 0.8), rgba(55, 60, 65, 0.8)), url('images/hero-image.jpg');
             background-size: cover;
             background-position: center;
@@ -234,7 +233,7 @@
             font-size: 0.9rem;
         }
         
-                /* Pricing section */
+        /* Pricing section */
         .pricing {
             padding: 5rem 0;
             background-color: #fff;
@@ -255,15 +254,24 @@
             transition: transform 0.3s;
         }
         
-        /* .pricing-card:hover {
-            transform: translateY(-5px);
-        } */
+        .pricing-tag {
+            background-color: black;
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: inline-block;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
         
         .pricing-header {
             background-color: rgba(38, 40, 43, 0.8);
             color: white;
             padding: 2rem 1.5rem;
             text-align: center;
+            position: relative;
         }
         
         .pricing-amount {
@@ -540,6 +548,7 @@
             <div class="pricing-cards">
                 <div class="pricing-card">
                     <div class="pricing-header">
+                        <span class="pricing-tag">Basic</span>
                         <div class="pricing-amount">from $540</div>
                         <div class="pricing-period">+ GST per year</div>
                     </div>
@@ -556,6 +565,7 @@
                 
                 <div class="pricing-card">
                     <div class="pricing-header">
+                        <span class="pricing-tag">Professional</span>
                         <div class="pricing-amount">from $1200</div>
                         <div class="pricing-period">+ GST per year</div>
                     </div>
@@ -573,6 +583,7 @@
                 
                 <div class="pricing-card">
                     <div class="pricing-header">
+                        <span class="pricing-tag">Company</span>
                         <div class="pricing-amount">from $1500</div>
                         <div class="pricing-period">+ GST per year</div>
                     </div>
@@ -591,12 +602,16 @@
 
                 <div class="pricing-card">
                     <div class="pricing-header">
+                        <span class="pricing-tag">Rental</span>
                         <div class="pricing-amount">from $500</div>
                         <div class="pricing-period">+ GST per year</div>
                     </div>
                     <div class="pricing-content">
                         <ul class="pricing-features">
-                            
+                            <li>Specialized accounting for rental properties</li>
+                            <li>Income and expense tracking</li>
+                            <li>Tax deduction optimization</li>
+                            <li>Annual financial reporting</li>
                         </ul>
                     </div>
                 </div>
