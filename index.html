@@ -52,6 +52,7 @@
         .nav-links {
             display: flex;
             list-style: none;
+            align-items: center;
         }
         
         .nav-links li {
@@ -67,6 +68,19 @@
         
         .nav-links a:hover {
             color: #1a4f8b;
+        }
+        
+        /* Call button styles */
+        .call-button {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        .call-icon {
+            margin-right: 0.5rem;
         }
         
         /* Hero section */
@@ -434,6 +448,19 @@
             .card h3 {
                 font-size: 1.1rem;
             }
+            
+            /* Mobile call button */
+            .call-button .phone-text {
+                display: none;
+            }
+            
+            .call-button {
+                padding: 0.5rem;
+            }
+            
+            .call-icon {
+                margin-right: 0;
+            }
         }
     </style>
 </head>
@@ -444,6 +471,12 @@
             <nav>
                 <div class="logo">Affordable Accounting</div>
                 <ul class="nav-links">
+                    <li>
+                        <a href="tel:+1234567890" class="call-button">
+                            <span class="call-icon">📱</span>
+                            <span class="phone-text">+1 (234) 567-890</span>
+                        </a>
+                    </li>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#pricing">Pricing</a></li>
