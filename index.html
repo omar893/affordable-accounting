@@ -234,6 +234,73 @@
             font-size: 0.9rem;
         }
         
+                /* Pricing section */
+        .pricing {
+            padding: 5rem 0;
+            background-color: #fff;
+        }
+        
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .pricing-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        /* .pricing-card:hover {
+            transform: translateY(-5px);
+        } */
+        
+        .pricing-header {
+            background-color: rgba(38, 40, 43, 0.8);
+            color: white;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+        
+        .pricing-amount {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pricing-period {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .pricing-content {
+            padding: 2rem 1.5rem;
+        }
+        
+        .pricing-features {
+            list-style: none;
+        }
+        
+        .pricing-features li {
+            margin: 1rem 0;
+            color: #666;
+            line-height: 1.4;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .pricing-features li:before {
+            content: "•";
+            color: #1a4f8b;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
         /* Contact section */
         .contact {
             padding: 5rem 0;
@@ -459,6 +526,66 @@
                             <h3>Rentals</h3>
                             <p>Specialized accounting services for rental properties. We handle income tracking, expense management, and tax deductions specific to rental investments.</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Our Pricing Plans</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-amount">$70</div>
+                        <div class="pricing-period">+ gst per week</div>
+                    </div>
+                    <div class="pricing-content">
+                        <ul class="pricing-features">
+                            <li>Reconciliation of accounts up to 20 transactions</li>
+                            <li>Customer invoicing, reminders and statements</li>
+                            <li>PAYE and GST filing</li>
+                            <li>Payroll management for 1-2 employees</li>
+                            <li>Weekly bill payments and management of accounts payable</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-amount">$120</div>
+                        <div class="pricing-period">+ gst per week</div>
+                    </div>
+                    <div class="pricing-content">
+                        <ul class="pricing-features">
+                            <li>Reconciliation of accounts up to 30 transactions</li>
+                            <li>Customer invoicing, reminders and statements</li>
+                            <li>PAYE and GST filing</li>
+                            <li>Payroll management for 2-5 employees</li>
+                            <li>Weekly bill payments and management of accounts payable</li>
+                            <li>Initial Xero set-up and management</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-amount">$350</div>
+                        <div class="pricing-period">+ gst per week</div>
+                    </div>
+                    <div class="pricing-content">
+                        <ul class="pricing-features">
+                            <li>Reconciliation of accounts</li>
+                            <li>Customer invoicing, reminders and statements</li>
+                            <li>PAYE and GST filing</li>
+                            <li>Payroll management</li>
+                            <li>Weekly bill payments and management of accounts payable</li>
+                            <li>Initial Xero set-up and management</li>
+                            <li>Accounts email management</li>
+                            <li>Preparation of EOFY accounts for accountant</li>
+                        </ul>
                     </div>
                 </div>
             </div>
